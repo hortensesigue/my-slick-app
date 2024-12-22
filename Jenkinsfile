@@ -56,6 +56,8 @@ pipeline {
             steps {
                 echo 'test connectivity to kubernetes clusters3'
                 sh '/var/lib/jenkins/bin/kubectl get nodes'
+                sh '/var/lib/jenkins/bin/kubectl apply -f slick-app-deployment.yml'
+                sh '/var/lib/jenkins/bin/kubectl apply -f slick-app-service-lb.yml'
             }
         }
     }
