@@ -54,7 +54,7 @@ pipeline {
 
         stage('Deploy to k8') {
             steps {
-                echo 'test connectivity to kubernetes cluster'
+                echo 'test connectivity to kubernetes clusters'
                 sh '/var/lib/jenkins/bin/kubectl kubectl get nodes'
             }
         }
