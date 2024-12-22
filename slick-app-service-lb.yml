@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: slick-application-lb # Name of the service
+spec:
+  type: LoadBalancer # type of service:  cluster IP, Nodeport or Load balancer
+  selector:
+    name: slick-application-l # Selector for managing all pods with this tag
+  ports:
+    - port: 80 # Open port 80 at lb
+      targetPort: 80 # Backend Pod port
