@@ -54,7 +54,7 @@ pipeline {
 
         stage('Deploy to k8') {
             steps {
-                echo 'test connectivity to kubernetes clusters3'
+                echo 'test connectivity to kubernetes clusters'
                 sh 'kubectl get nodes'
                 sh '/var/lib/jenkins/bin/kubectl apply -f slick-app-deployment.yml'
                 sh '/var/lib/jenkins/bin/kubectl apply -f slick-app-service-lb.yml'
