@@ -51,6 +51,13 @@ pipeline {
                 sh 'echo the image of the following container was successfully deployed on github: $DOCKER_REPOSITORY:v$BUILD_NUMBER'
             }
         }
+
+        stage('Deploy to k8') {
+            steps {
+                echo 'test connectivity to kubernetes clusters3'
+                sh '/var/lib/jenkins/bin/kubectl get nodes'
+            }
+        }
     }
     
     post { 
